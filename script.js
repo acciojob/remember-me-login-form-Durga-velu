@@ -15,19 +15,22 @@ btn.addEventListener(("click"),(e)=>{
 e.preventDefault()
 	let storeData=JSON.parse(localStorage.getItem("userData")) || []
 	let userInfo={username:username.value, password:password.value}
+	
+	
 	alert(`Logged in as ${username.value}`)
+		username.innerHTML=""
+	password.innerHTML=""
 	if(checkbox.checked){
 
 		storeData.push(userInfo)
 		localStorage.setItem("userData", JSON.stringify(storeData))
 		login.style.display="flex"
+		checkbox.checked=""
 	
 	}else{
 		localStorage.clear()
 	}
-	username.textContent=""
-	password.textContent=""
-	checkbox.checked=""
+
 })
 
 login.addEventListener(("click"),()=>{
