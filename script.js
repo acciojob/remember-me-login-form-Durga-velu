@@ -25,9 +25,10 @@ e.preventDefault()
 	}else{
 		localStorage.clear()
 	}
-	
+	username.textContent=""
+	password.textContent=""
+	checkbox.checked=""
 })
-
 
 login.addEventListener(("click"),()=>{
 	    let storedData = JSON.parse(localStorage.getItem("userData"));
