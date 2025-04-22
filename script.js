@@ -15,8 +15,7 @@ e.preventDefault()
 	
 	
 	alert(`Logged in as ${username.value}`)
-		username.value=""
-	password.value=""
+
 	if(checkbox.checked){
 
 		storeData.push(userInfo)
