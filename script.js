@@ -8,7 +8,7 @@ let login=document.getElementById("existing")
 btn.addEventListener(("click"),(e)=>{
 
 	let userInfo=[];
-	userInfo.push({"username":"username.value", "password":"password.value"})
+	userInfo.push({username:username.value, password:password.value})
 	alert(`Logged in as ${username}`)
 	if(checkbox:checked){
 		
