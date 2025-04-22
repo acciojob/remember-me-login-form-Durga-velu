@@ -5,22 +5,35 @@ let username=document.getElementById("username")
 let password=document.getElementById("password")
 let checkbox=document.getElementById("checkbox")
 let login=document.getElementById("existing")
-btn.addEventListener(("click"),(e)=>{
 
-	let userInfo=[];
-	   let storeData=JSON.parse(localStorage.getItem("userData"))
-	userInfo.push({username:username.value, password:password.value})
+
+if (localStorage.getItem("userData")) {
+    login.style.display = "flex";
+}
+
+btn.addEventListener(("click"),(e)=>{
+e.preventDefault()
+	let storeData=JSON.parse(localStorage.getItem("userData")) || []
+	let userInfo={username:username.value, password:password.value}
 	alert(`Logged in as ${username.value}`)
-	if(checkbox.value){
-		localStorage.setItem("userData", JSON.stringify(userInfo))
-login.addEventListener(("click"),()=>{
-	alert(`Logged in as saved ${username.value}`)
-})
+	if(checkbox.checked){
+
+		storeData.push(userInfo)
+		localStorage.setItem("userData", JSON.stringify(storeData))
+		login.style.display="flex"
 	
 	}else{
 		localStorage.clear()
 	}
 	
+})
+
+
+login.addEventListener(("click"),()=>{
+	    let storedData = JSON.parse(localStorage.getItem("userData"));
+    if (storedData && storedData.length > 0) {
+        alert(`Logged in as saved ${storedData[storedData.length - 1].username}`);
+    }
 })
 
 
