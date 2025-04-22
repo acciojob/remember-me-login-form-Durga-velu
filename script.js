@@ -11,7 +11,7 @@ btn.addEventListener(("click"),(e)=>{
 	   let storeData=JSON.parse(localStorage.getItem("userData"))
 	userInfo.push({username:username.value, password:password.value})
 	alert(`Logged in as ${username.value}`)
-	if(checkbox){
+	if(checkbox.value){
 		localStorage.setItem("userData", JSON.stringify(userInfo))
 login.addEventListener(("click"),()=>{
 	alert(`Logged in as saved ${username.value}`)
