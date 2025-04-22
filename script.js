@@ -1,6 +1,6 @@
 //your JS code here. If required.
 
-let btn=document.getElementById("submit")
+let submit=document.getElementById("submit")
 let username=document.getElementById("username")
 let password=document.getElementById("password")
 let checkbox=document.getElementById("checkbox")
@@ -11,7 +11,7 @@ if (localStorage.getItem("userData")) {
     login.style.display = "flex";
 }
 
-btn.addEventListener(("click"),(e)=>{
+submit.addEventListener(("click"),(e)=>{
 e.preventDefault()
 	let storeData=JSON.parse(localStorage.getItem("userData")) || []
 	let userInfo={username:username.value, password:password.value}
