@@ -7,9 +7,6 @@ let checkbox=document.getElementById("checkbox")
 let login=document.getElementById("existing")
 
 
-if (localStorage.getItem("userData")) {
-    login.style.display = "flex";
-}
 
 submit.addEventListener(("click"),(e)=>{
 e.preventDefault()
