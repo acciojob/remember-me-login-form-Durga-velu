@@ -24,7 +24,7 @@ e.preventDefault()
 		checkbox.checked=""
 	
 	}else{
-		localStorage.clear()
+		localStorage.removeItem("userData");
 	}
 
 })
